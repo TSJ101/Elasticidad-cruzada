@@ -1,0 +1,46 @@
+"""
+Created on Mon Aug 24 13:14:50 2020
+
+@author: Tomas  Sanchez
+Programa para calcular la elasticidad cruzada de la demanda
+"""
+x= 0 
+while x==0:
+    x1=str(input("Sabe el valor del cambio porcentual de la demanda del bien 1?  "))
+    if x1== str("Si") or x1== str("si"):
+        Variacion=float(input("Ingrese el valor del cambio porcentual de la demanda del bien 1 "))
+        print("Cambio porcentual de la demanda del bien 1", Variacion)
+        x+=1
+        
+    else : 
+        V2=float(input("Ingrese el valor 2 de la cantidad demandada del bien 1  "))
+        V1=float(input("Ingrese el valor 1 de la cantidad demandada del bien 1  "))
+        Variacion=((V2-V1)/V1)
+        print("Variacion de la demanda del bien 1", Variacion)
+        x+=1
+    
+y= 0
+while y==0:
+    y1=input("Sabe el valor de la variacion del precio del bien 2?  ")
+    if y1== "Si" or y1== str("si"):
+        y2=float(input("Ingrese el valor de la variacion del precio del bien 2  "))
+        print("Variacion del precio del bien 2", y2)
+        y+=1
+    else:
+        VP2=float(input("Ingrese el valor 2 de la variacion del precio del bien 2  "))
+        VP1=float(input("Ingrese el valor 1 de la variacion del precio del bien 2  "))
+        VariacionP=((VP2-VP1)/VP1)
+        print("Variacion del precio del bien 2 ", VariacionP)
+        y+=1
+ValorElasticidadCompuesta=(Variacion/VariacionP)
+print(ValorElasticidadCompuesta)
+if ValorElasticidadCompuesta >=0:
+    print("Los bienes son sustitutos")
+else:
+    print("Los bienes son complementarios")
+if ValorElasticidadCompuesta >=1:
+    print("Los bienes son sustitutos imperfectos")
+else:
+    print("Los bienes son sustitutos perfectos")
+ 
+input()
